@@ -23,8 +23,8 @@ export default async function handler(req, res) {
   if (has_garage === 'true')  clauses.push(`has_garage = true`);
   if (has_garden === 'true')  clauses.push(`has_garden = true`);
   if (has_terrace === 'true') clauses.push(`has_terrace = true`);
-  if (min_price)         clauses.push(`price >= $${values.push(parseInt(min_price))}`);
-  if (max_price)         clauses.push(`price <= $${values.push(parseInt(max_price))}`);
+  if (min_price)         clauses.push(`price >= $${values.push(parseInt(min_price))}`);  
+  if (max_price)         clauses.push(`price <= $${values.push(parseInt(max_price))}`);  
   const where = clauses.length ? 'WHERE ' + clauses.join(' AND ') : '';
   const sql = `SELECT * FROM properties ${where} ORDER BY price`;
   try {
