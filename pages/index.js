@@ -34,14 +34,30 @@ export default function HomePage() {
     "Autre"
   ];
 
-  const continentOptions = {
-    Europe: ["France", "Belgique", "Espagne", "Allemagne", "Italie", "Grèce", "Portugal", "Norvège", "Suède", "Finlande", ],
-    USA: ["États-Unis"], "Alabama", "Alaska", "Arizona", "Arkansas", "Californie", "Caroline du Nord", "Caroline du Sud", "Colorado", "Connecticut",
-"Iowa", "Indiana", "Kansas", "Kentucky", "Louisiane", "Maine", "Maryland", "Massachusetts", "Michigan","New York", "Nouveau-Mexique", "Ohio", "Oklahoma", "Oregon", "Pennsylvanie", "Rhode Island", "Tennessee", "Texas", ],
-    Afrique: ["Maroc", "Algérie", "Tunisie", "Sénégal"],
-    Asie: ["Chine", "Japon", "Inde", "Thaïlande"],
-    Océanie: ["Australie", "Nouvelle-Zélande"]
-  };
+const continentOptions = {
+  Europe: [
+    "France","Belgique","Espagne","Allemagne","Italie",
+    "Grèce","Portugal","Norvège","Suède","Finlande"
+  ],
+  USA: [
+    "États-Unis",
+    "Alabama","Alaska","Arizona","Arkansas","Californie",
+    "Caroline du Nord","Caroline du Sud","Colorado","Connecticut",
+    "Iowa","Indiana","Kansas","Kentucky","Louisiane","Maine",
+    "Maryland","Massachusetts","Michigan","New York",
+    "Nouveau-Mexique","Ohio","Oklahoma","Oregon",
+    "Pennsylvanie","Rhode Island","Tennessee","Texas"
+  ],
+  Afrique: [
+    "Maroc","Algérie","Tunisie","Sénégal"
+  ],
+  Asie: [
+    "Chine","Japon","Inde","Thaïlande"
+  ],
+  Océanie: [
+    "Australie","Nouvelle-Zélande"
+  ]
+};
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
