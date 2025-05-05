@@ -37,7 +37,7 @@ export default function HomePage() {
   const locationOptions = {
     Europe: {
       France: ["Paris", "Lyon", "Marseille", "Bordeaux", "Nice", "Cannes", "Saint Tropez",],
-      Monaco: ["Monaco"]
+      Monaco: ["Monaco"],
       Belgique: ["Bruxelles", "Anvers", "Liège", "Gand", "Namur", "Knokke"],
       Espagne: ["Madrid", "Barcelone", "Valence", "Séville", "Ibiza", "Formentera", "Palma", "Minorque", "Malaga", "Alicante", "Benidorme", "Bilbao"],
       Allemagne: ["Berlin", "Munich", "Francfort", "Hambourg"],
@@ -45,12 +45,12 @@ export default function HomePage() {
     },
     USA: {
     "États-Unis",
-    "Alabama","Alaska","Arizona","Arkansas","Californie",
+    ["Alabama","Alaska","Arizona","Arkansas","Californie",
     "Caroline du Nord","Caroline du Sud","Colorado","Connecticut",
     "Iowa","Indiana","Kansas","Kentucky","Louisiane","Maine",
     "Maryland","Massachusetts","Michigan","New York",
     "Nouveau-Mexique","Ohio","Oklahoma","Oregon",
-    "Pennsylvanie","Rhode Island","Tennessee","Texas"
+    "Pennsylvanie","Rhode Island","Tennessee","Texas"]
     },
     Afrique: {
       Maroc: ["Casablanca", "Rabat", "Marrakech", "Tanger"],
