@@ -36,7 +36,7 @@ export default function HomePage() {
 
   const continentOptions = {
     Europe: ["France", "Belgique", "Espagne", "Allemagne", "Italie", "Grèce", "Portugal", "Norvège", "Suède", "Finlande", ],
-    USA: ["États-Unis"],["États"], "Alabama", "Alaska", "Arizona", "Arkansas", "Californie", "Caroline du Nord", "Caroline du Sud", "Colorado", "Connecticut",
+    USA: ["États-Unis"], "Alabama", "Alaska", "Arizona", "Arkansas", "Californie", "Caroline du Nord", "Caroline du Sud", "Colorado", "Connecticut",
 "Iowa", "Indiana", "Kansas", "Kentucky", "Louisiane", "Maine", "Maryland", "Massachusetts", "Michigan","New York", "Nouveau-Mexique", "Ohio", "Oklahoma", "Oregon", "Pennsylvanie", "Rhode Island", "Tennessee", "Texas", ],
     Afrique: ["Maroc", "Algérie", "Tunisie", "Sénégal"],
     Asie: ["Chine", "Japon", "Inde", "Thaïlande"],
