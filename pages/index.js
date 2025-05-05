@@ -34,40 +34,37 @@ export default function HomePage() {
     "Autre"
   ];
 
+  // Liste des emplacements par continent > pays > villes
   const locationOptions = {
     Europe: {
-      France: ["Paris", "Lyon", "Marseille", "Bordeaux", "Nice", "Cannes", "Saint Tropez",],
+      France: ["Paris", "Lyon", "Marseille", "Bordeaux", "Nice", "Cannes", "Saint-Tropez"],
       Monaco: ["Monaco"],
       Belgique: ["Bruxelles", "Anvers", "Liège", "Gand", "Namur", "Knokke"],
-      Espagne: ["Madrid", "Barcelone", "Valence", "Séville", "Ibiza", "Formentera", "Palma", "Minorque", "Malaga", "Alicante", "Benidorme", "Bilbao"],
+      Espagne: ["Madrid", "Barcelone", "Valence", "Séville", "Ibiza", "Formentera", "Palma", "Minorque", "Malaga", "Alicante", "Benidorm", "Bilbao"],
       Allemagne: ["Berlin", "Munich", "Francfort", "Hambourg"],
       Italie: ["Rome", "Milan", "Venise", "Florence"]
     },
     USA: {
-    "États-Unis",
-    ["Alabama","Alaska","Arizona","Arkansas","Californie",
-    "Caroline du Nord","Caroline du Sud","Colorado","Connecticut",
-    "Iowa","Indiana","Kansas","Kentucky","Louisiane","Maine",
-    "Maryland","Massachusetts","Michigan","New York",
-    "Nouveau-Mexique","Ohio","Oklahoma","Oregon",
-    "Pennsylvanie","Rhode Island","Tennessee","Texas"]
+      "États-Unis": [
+        "New York", "Los Angeles", "Chicago", "Houston", "Miami",
+        "Alabama", "Alaska", "Arizona", "Arkansas", "Californie", "Caroline du Nord", "Caroline du Sud", "Colorado", "Connecticut", "Iowa", "Indiana", "Kansas", "Kentucky", "Louisiane", "Maine", "Maryland", "Massachusetts", "Michigan", "New York State", "Nouveau-Mexique", "Ohio", "Oklahoma", "Oregon", "Pennsylvanie", "Rhode Island", "Tennessee", "Texas"
+      ]
     },
     Afrique: {
       Maroc: ["Casablanca", "Rabat", "Marrakech", "Tanger"],
       Algérie: ["Alger", "Oran", "Constantine"],
       Tunisie: ["Tunis", "Sfax", "Sousse"],
-      Sénégal: ["Dakar", "Saint-Louis", "Thiès"]
-      Afrique du sud: ["La Cap"]
+      Sénégal: ["Dakar", "Saint-Louis", "Thiès"],
+      "Afrique du Sud": ["Le Cap", "Johannesburg", "Durban"]
     },
     Asie: {
       Chine: ["Pékin", "Shanghai", "Shenzhen"],
       Japon: ["Tokyo", "Osaka", "Kyoto"],
       Inde: ["Mumbai", "Delhi", "Bangalore"],
-      Thaïlande: ["Bangkok", "Chiang Mai"]
-      Vietnam:["Hanoï"]
-      Cambodge:["Phnom-Pen"]
-      Indonésie:["Bali"]
-      
+      Thaïlande: ["Bangkok", "Chiang Mai"],
+      Vietnam: ["Hanoï", "Hô Chi Minh"],
+      Cambodge: ["Phnom Penh", "Siem Reap"],
+      Indonésie: ["Bali", "Jakarta", "Surabaya"]
     },
     Océanie: {
       Australie: ["Sydney", "Melbourne", "Brisbane", "Perth"],
@@ -148,7 +145,7 @@ export default function HomePage() {
             <label className="flex items-center gap-2"><input type="checkbox" name="has_garden" checked={criteria.has_garden} onChange={handleChange} /> Jardin</label>
             <label className="flex items-center gap-2"><input type="checkbox" name="has_terrace" checked={criteria.has_terrace} onChange={handleChange} /> Terrasse</label>
 
-            <div className="flex gap-2 md:col-span-2">
+            <div className="flexGap-2 md:col-span-2">
               <input type="number" name="min_price" placeholder="Prix min (€)" value={criteria.min_price} onChange={handleChange} className="border p-2 rounded flex-1" />
               <input type="number" name="max_price" placeholder="Prix max (€)" value={criteria.max_price} onChange={handleChange} className="border p-2 rounded flex-1" />
             </div>
