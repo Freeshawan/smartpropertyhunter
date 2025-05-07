@@ -7,7 +7,6 @@ export default function HomePage() {
     property_type: "",
     continent: "",
     country: "",
-    city: "",
     commune: "",
     min_bedrooms: "",
     max_bedrooms: "",
@@ -93,9 +92,8 @@ export default function HomePage() {
     setCriteria((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-      ...(name === "continent" && { country: "", city: "", commune: "" }),
-      ...(name === "country" && { city: "", commune: "" }),
-      ...(name === "city" && { commune: "" })
+      ...(name === "continent" && { country: "", commune: "" }),
+      ...(name === "country" && { commune: "" })
     }));
   };
 
@@ -111,13 +109,7 @@ export default function HomePage() {
 
   const continents = Object.keys(locationOptions);
   const countries = criteria.continent ? Object.keys(locationOptions[criteria.continent]) : [];
-  const cities = criteria.continent && criteria.country ? locationOptions[criteria.continent][criteria.country] : [];
-  const communes =
-    criteria.continent && criteria.country && criteria.city
-      ? locationOptions[criteria.continent][criteria.country].includes(criteria.city)
-        ? ["-- Sélectionnez une commune --", ...locationOptions[criteria.continent][criteria.country]]
-        : []
-      : [];
+  const communes = criteria.continent && criteria.country ? locationOptions[criteria.continent][criteria.country] : [];
 
   return (
     <>
@@ -190,27 +182,12 @@ export default function HomePage() {
               ))}
             </select>
 
-            <select
-              name="city"
-              value={criteria.city}
-              onChange={handleChange}
-              disabled={!criteria.country}
-              className="border p-2 rounded"
-            >
-              <option value="">Ville</option>
-              {cities.map((v) => (
-                <option key={v} value={v}>
-                  {v}
-                </option>
-              ))}
-            </select>
-
-            {/* Commune */}
+            {/* Commune (remplace Ville) */}
             <select
               name="commune"
               value={criteria.commune}
               onChange={handleChange}
-              disabled={!criteria.city}
+              disabled={!criteria.country}
               className="border p-2 rounded"
             >
               <option value="">Commune</option>
@@ -240,77 +217,5 @@ export default function HomePage() {
               />
             </div>
 
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                name="has_garage"
-                checked={criteria.has_garage}
-                onChange={handleChange}
-              /> Garage
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                name="has_garden"
-                checked={criteria.has_garden}
-                onChange={handleChange}
-              /> Jardin
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                name="has_terrace"
-                checked={criteria.has_terrace}
-                onChange={handleChange}
-              /> Terrasse
-            </label>
-
-            <div className="flex gap-2 md:col-span-2">
-              <input
-                type="number"
-                name="min_price"
-                placeholder="Prix min (€)"
-                value={criteria.min_price}
-                onChange={handleChange}
-                className="border p-2 rounded flex-1"
-              />
-              <input
-                type="number"
-                name="max_price"
-                placeholder="Prix max (€)"
-                value={criteria.max_price}
-                onChange={handleChange}
-                className="border p-2 rounded flex-1"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="md:col-span-2 bg-blue-600 text-white py-2 rounded-2xl hover:bg-blue-700 transition"
-            >
-              Rechercher
-            </button>
-          </form>
-        </section>
-
-        <section className="max-w-4xl mx-auto mt-8 space-y-6">
-          {results.map((prop) => (
-            <div
-              key={prop.id}
-              className="border p-4 rounded-2xl shadow-md"
-            >
-              <h2 className="font-semibold text-xl">{prop.title}</h2>
-              <p className="text-gray-600">{prop.location} – {prop.price} €</p>
-              <div className="flex flex-wrap gap-2 mt-2 text-sm">
-                {prop.bedrooms > 0 && <span>{prop.bedrooms} ch.</span>}
-                {prop.has_garage && <span>Garage</span>}
-                {prop.has_garden && <span>Jardin</span>}
-                {prop.has_terrace && <span>Terrasse</span>}
-              </div>
-            </div>
-          ))}
-        </section>
-      </main>
-    </>
-  );
-}
+            <label className="flex items-center gap-2"><input type="checkbox" name="has_garage" checked={criteria.has_garage} onChange={handleChange} /> Garage</label>
+            <label className="flex items-center gap-2"><input type="checkbox" name="has_garden```
