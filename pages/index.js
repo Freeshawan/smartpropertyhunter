@@ -38,25 +38,10 @@ export default function HomePage() {
       France: ["Paris", "Lyon", "Marseille", "Bordeaux", "Nice", "Cannes", "Saint-Tropez"],
       Monaco: ["Monaco"],
       Belgique: [
-        "Anderlecht",
-        "Auderghem",
-        "Berchem-Sainte-Agathe",
-        "Bruxelles-ville",
-        "Etterbeek",
-        "Evere",
-        "Forest",
-        "Ganshoren",
-        "Ixelles",
-        "Jette",
-        "Koekelberg",
-        "Molenbeek-Saint-Jean",
-        "Saint-Gilles",
-        "Saint-Josse-ten-Noode",
-        "Schaerbeek",
-        "Uccle",
-        "Watermael-Boitsfort",
-        "Woluwe-Saint-Lambert",
-        "Woluwe-Saint-Pierre"
+        "Anderlecht", "Auderghem", "Berchem-Sainte-Agathe", "Bruxelles-ville",
+        "Etterbeek", "Evere", "Forest", "Ganshoren", "Ixelles", "Jette",
+        "Koekelberg", "Molenbeek-Saint-Jean", "Saint-Gilles", "Saint-Josse-ten-Noode",
+        "Schaerbeek", "Uccle", "Watermael-Boitsfort", "Woluwe-Saint-Lambert", "Woluwe-Saint-Pierre"
       ],
       Espagne: ["Madrid", "Barcelone", "Valence", "Séville", "Ibiza", "Formentera", "Palma", "Minorque", "Malaga", "Alicante", "Benidorm", "Bilbao"],
       Allemagne: ["Berlin", "Munich", "Francfort", "Hambourg"],
@@ -147,9 +132,7 @@ export default function HomePage() {
             >
               <option value="">Type de bien</option>
               {typeOptions.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
+                <option key={type} value={type}>{type}</option>
               ))}
             </select>
 
@@ -161,9 +144,7 @@ export default function HomePage() {
             >
               <option value="">Continent</option>
               {continents.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
+                <option key={c} value={c}>{c}</option>
               ))}
             </select>
 
@@ -176,9 +157,7 @@ export default function HomePage() {
             >
               <option value="">Pays</option>
               {countries.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
+                <option key={c} value={c}>{c}</option>
               ))}
             </select>
 
@@ -192,9 +171,7 @@ export default function HomePage() {
             >
               <option value="">Commune</option>
               {communes.map((com) => (
-                <option key={com} value={com}>
-                  {com}
-                </option>
+                <option key={com} value={com}>{com}</option>
               ))}
             </select>
 
@@ -217,5 +194,46 @@ export default function HomePage() {
               />
             </div>
 
-            <label className="flex items-center gap-2"><input type="checkbox" name="has_garage" checked={criteria.has_garage} onChange={handleChange} /> Garage</label>
-            <label className="flex items-center gap-2"><input type="checkbox" name="has_garden```
+            <label className="flex items-center gap-2">
+              <input type="checkbox" name="has_garage" checked={criteria.has_garage} onChange={handleChange} /> Garage
+            </label>
+
+            <label className="flex items-center gap-2">
+              <input type="checkbox" name="has_garden" checked={criteria.has_garden} onChange={handleChange} /> Jardin
+            </label>
+
+            <label className="flex items-center gap-2">
+              <input type="checkbox" name="has_terrace" checked={criteria.has_terrace} onChange={handleChange} /> Terrasse
+            </label>
+
+            <div className="flex gap-2">
+              <input
+                type="number"
+                name="min_price"
+                placeholder="Prix min"
+                value={criteria.min_price}
+                onChange={handleChange}
+                className="border p-2 rounded flex-1"
+              />
+              <input
+                type="number"
+                name="max_price"
+                placeholder="Prix max"
+                value={criteria.max_price}
+                onChange={handleChange}
+                className="border p-2 rounded flex-1"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="col-span-1 md:col-span-2 bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+            >
+              Rechercher
+            </button>
+          </form>
+        </section>
+      </main>
+    </>
+  );
+}
